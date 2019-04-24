@@ -1,6 +1,6 @@
 package dk.cosby;
 
-import dk.cosby.model.Game;
+import dk.cosby.view.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +16,11 @@ public class Main extends Application {
         primaryStage.setTitle("Game of Life");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+
+        Controller controller = new Controller();
+
+        controller.initialize();
+
 
     }
 

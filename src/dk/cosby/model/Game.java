@@ -7,14 +7,16 @@ public class Game {
     ////////////////////////////////////////// CONSTANTS /////////////////////////////////////////////////
 
     //grid size constants
-    public static final int GRID_SIZE_X = 34;
-    public static final int GRID_SIZE_Y = 20;
+    public static final int GRID_SIZE_X = 56;
+    public static final int GRID_SIZE_Y = 35;
 
 
     /////////////////////////////////////// CLASS VARIABLES //////////////////////////////////////////////
 
     //initializing 2-dimentional Cell array
     private Cell[][] grid = new Cell[GRID_SIZE_X][GRID_SIZE_Y];
+
+    private int generation = 0;
 
 
     //////////////////////////////////////// CONSTRUCTORS ////////////////////////////////////////////////
@@ -56,11 +58,13 @@ public class Game {
             }
         }
 
+        generation++;
+
     }
 
 
     //Counting neighbors of each cell in grid and sets livingNeighbors of the cell
-    //This method is used by updateGrid(Cell[][] grid) Method
+    //This method is used by nextFrame(Cell[][] grid) Method
     public void countNeighbors(Cell[][] grid){
 
         int neighborCounter;
@@ -151,5 +155,13 @@ public class Game {
 
     public void setGrid(Cell[][] grid) {
         this.grid = grid;
+    }
+
+    public int getGeneration() {
+        return generation;
+    }
+
+    public void setGeneration(int generation) {
+        this.generation = generation;
     }
 }
